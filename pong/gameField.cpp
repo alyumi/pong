@@ -1,13 +1,25 @@
+#include <iostream>
 #include "gameField.h"
+
+gameField::gameField()
+{
+	int n = LENGTH;
+	for (int i = 0; i < WIDTH; ++i) {
+		for (int j = 0; j < LENGTH;  ++j) {
+			gameField::field[i][j] = "[] ";
+		}
+		gameField::field[i][n- 1] += "\n";
+	}
+}
 
 void gameField::draw()
 {
-	for (int i = 0; i < gameField::WIDTH; i++) {
-		for (int j = 0; j < gameField::LENGTH; j++) {
-			std::cout << "hi";
+	for (int i = 0; i < WIDTH; ++i) {
+		for (int j = 0; j < LENGTH; ++j) {
+			std::cout << gameField::field[i][j];
 		}
 	}
-	
+	std::cout << "\n";
 }
 
 void gameField::addPlate(Plate plate, bool isLeft)
@@ -20,12 +32,12 @@ void gameField::addBall()
 
 void gameField::setWIDTH(int width)
 {
-	gameField::WIDTH = width;
+	// Not needed
 }
 
 void gameField::setLENGTH(int length)
 {
-	gameField::LENGTH = length;
+	// Not needed
 }
 
 void gameField::setCellWidth(int cellwidth)
@@ -35,12 +47,12 @@ void gameField::setCellWidth(int cellwidth)
 
 int gameField::getWIDTH()
 {
-	return gameField::WIDTH;
+	return WIDTH;
 }
 
 int gameField::getLENGTH()
 {
-	return gameField::LENGTH;
+	return LENGTH;
 }
 
 int gameField::getCellWidth()

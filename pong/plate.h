@@ -1,5 +1,4 @@
 #pragma once
-#include "header.h"
 
 class Plate {
 
@@ -20,4 +19,10 @@ public:
 	transform setTransform(int x, int y);
 	int setSpeed(int speed);
 	inputKeys setInputKeys(int up, int down, int boost);
+
+	void getTransform();
+	void getSpeed();
+	void getInputKeys();
+
+	Plate(int spd, bool isLeft);
 };

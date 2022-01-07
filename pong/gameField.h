@@ -1,15 +1,22 @@
 #pragma once
 
-#include "header.h"
+#include <string>
+#include "plate.h"
+
+#define WIDTH 20
+#define LENGTH 30
+
 
 class gameField
 {
 private:
-	int WIDTH = 20;
-	int LENGTH = 30;
 	int cellwidth = 1;
+	std::string field[WIDTH][LENGTH];
 
 public:
+	gameField();
+
+
 	void draw();
 	void addPlate(Plate plate, bool isLeft);
 	void addBall();

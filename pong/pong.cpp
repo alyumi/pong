@@ -3,12 +3,17 @@
 
 #include <iostream>
 #include <string>
-#include "header.h"
+
+#include "gameField.h"
+#include "plate.h"
 
 using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    gameField field;
+    field.draw();
+    Plate left{1, true};
+    Plate right{ 1, false };
 }
 
